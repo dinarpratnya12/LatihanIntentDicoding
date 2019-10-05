@@ -15,4 +15,13 @@
         android:layout_marginTop="16dp"
         android:text="@string/move_activity">
     </Button>
+
+    <Button
+        android:id="@+id/btnMoveActivityData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/move_with_data">
+    </Button>
+
 </LinearLayout>
