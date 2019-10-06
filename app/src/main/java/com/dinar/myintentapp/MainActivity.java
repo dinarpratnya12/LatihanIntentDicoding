@@ -3,6 +3,7 @@ package com.dinar.myintentapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Button btnMoveActivityData = findViewById(R.id.btnMoveActivityData);
         btnMoveActivityData.setOnClickListener(this);
+
+        Button btnDialPhone = findViewById(R.id.btn_dial_number);
+        btnDialPhone.setOnClickListener(this);
     }
      public void onClick(View view){
         switch (view.getId()){
@@ -31,6 +35,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 moveIntentData.putExtra(MoveWithDataActivity.EXTRA_NAME, "Dinarpratnya Ningrum");
                 moveIntentData.putExtra(MoveWithDataActivity.EXTRA_AGE,21);
                 startActivity(moveIntentData);
+            break;
+            case  R.id.btn_dial_number:
+                String phoneNumber = "081233996612";
+                Intent dialPhone = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+phoneNumber));
+                startActivity(dialPhone);
                 break;
         }
      }
